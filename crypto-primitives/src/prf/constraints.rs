@@ -18,5 +18,5 @@ pub trait PRFGadget<P: PRF, F: Field> {
 
     fn new_seed(cs: impl Into<Namespace<F>>, seed: &P::Seed) -> Vec<UInt8<F>>;
 
-    fn evaluate(seed: &[UInt8<F>], input: &[UInt8<F>]) -> Result<Self::OutputVar, SynthesisError>;
+    pub fn evaluate(seed: &[UInt8<F>], input: &[UInt8<F>]) -> Result<Self::OutputVar, SynthesisError>;
 }
