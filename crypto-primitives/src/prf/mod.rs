@@ -17,5 +17,5 @@ pub trait PRF {
     type Output: CanonicalSerialize + Eq + Clone + Debug + Default + Hash;
     type Seed: CanonicalDeserialize + CanonicalSerialize + Clone + Default + Debug;
 
-    fn evaluate(seed: &Self::Seed, input: &Self::Input) -> Result<Self::Output, Error>;
+    fn evaluate(input: &Self::Input) -> Result<Self::Output, Error>;
 }

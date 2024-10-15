@@ -17,10 +17,10 @@ impl PRF for Blake2s {
     type Output = [u8; 32];
     type Seed = [u8; 32];
 
-        fn evaluate(seed: &Self::Seed, input: &Self::Input) -> Result<Self::Output, Error> {
+        fn evaluate(input: &Self::Input) -> Result<Self::Output, Error> {
         let eval_time = start_timer!(|| "Blake2s::Eval");
         let mut h = B2s::new();
-        h.update(seed.as_ref());
+        //h.update(seed.as_ref());
         h.update(input.as_ref());
         let mut result = [0u8; 32];
         result.copy_from_slice(&h.finalize());
