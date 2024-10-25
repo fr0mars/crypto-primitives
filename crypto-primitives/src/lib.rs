@@ -31,7 +31,7 @@ pub mod merkle_tree;
 #[cfg(feature = "encryption")]
 pub mod encryption;
 
-#[cfg(feature = "prf")]
+
 pub mod prf;
 
 #[cfg(feature = "signature")]
